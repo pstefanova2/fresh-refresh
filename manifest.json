@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "FreshDesk refresher",
+    "version": "1.0",
+    "permissions": ["tabs"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://servicedesk.cobaltix.com/*",
+                    "https://*.freshdesk.com/*",
+                    "https://*.freshservice.com/*",
+                    "https://cobaltix-help.freshcaller.com/live"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": {
+        "16": "fr1.png",
+        "48": "fr1.png",
+        "128": "fr1.png"
+      }
+    }
+  }
